@@ -95,6 +95,16 @@ function deleteTask(e){
     } 
 }
 
+/************************************************************************************************ */
+
+// Add a "checked" symbol when clicking on a list item
+
+listContainer.addEventListener('click', function(e) {
+    if (e.target.tagName === 'LI') {
+        e.target.classList.toggle('checked');
+    }
+});
+
 
 /************************************************************************************************ */
 
