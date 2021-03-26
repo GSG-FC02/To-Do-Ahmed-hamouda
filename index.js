@@ -76,7 +76,7 @@ function creatMyTask (currentValue){
 
 /* delete function */
 function deleteTask(e){
-    let taskToDelete = e.target.parentNode;
+    let taskToDelete = e.target.parentNode;   // OR parentElement
     taskToDelete.style.display = "none";
     let localData = JSON.parse(localStorage.getItem("myToDo"));
     let requiredTask = taskToDelete.childNodes[0].textContent;
@@ -88,7 +88,7 @@ function deleteTask(e){
             if(localData[i] === requiredTask){
                 console.log("ok");
                 localData.splice(i, 1);
-                localStorage.setItem("myToDo", JSON.stringify(localData))
+                localStorage.setItem("myToDo", JSON.stringify(localData))  // to remove in localstorge
             }
 
         }
@@ -128,7 +128,7 @@ window.onload = function(){
 
 // Trigger a Button Click on Enter
 
-input.addEventListener("keyup", function(event) {
+input.addEventListener('keyup', function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         addBtn.click();
